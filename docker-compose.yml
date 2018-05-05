@@ -1,0 +1,14 @@
+version: '2'
+services:
+  haproxy:
+    build:
+      context: ./haproxy
+    ports:
+      - 80:80
+      - 443:443
+      - 8443:8443
+    links:
+      - app
+  app:
+    build:
+      context: ./app
